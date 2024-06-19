@@ -208,6 +208,25 @@ var playing = false;
         animation-mixer>
       </a-entity>
     </a-marker>
+
+    <a-assets>
+			<a-asset-item id="robot" src="./assets/Robo8.glb"></a-asset-item>
+			<audio id="music" src="./mp3/TWICE   Dance Again.mp3" autoplay="true" loop="true" preload="auto"></audio>
+		</a-assets>
+         
+         <!-- Defines the pattern marker that we are going to use. Notice that we are not providing the image file, but the  -->
+             
+				
+		 		<a-marker type='barcode' value='20' id="marker">
+					<a-entity 
+						gltf-model="#robot"
+						scale=".5 .5 .5" animation-mixer>
+					</a-entity>
+				</a-marker>   
+				<a-entity sound="src: #music" autoplay="false"></a-entity>      
+				
+         <!-- Define the camera of the scene -->
+         <a-entity camera></a-entity>
     
     <!-- Define the camera of the scene -->
     <a-entity camera></a-entity>
