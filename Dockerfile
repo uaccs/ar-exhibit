@@ -8,9 +8,9 @@ COPY . /usr/local/apache2/htdocs/
 RUN sed -i '/LoadModule rewrite_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
 RUN sed -i '/LoadModule ssl_module/s/^#//g' /usr/local/apache2/conf/httpd.conf
 
-# Copy your SSL certificate and key
-COPY certificate.crt /usr/local/apache2/conf/server.crt
-COPY private.key /usr/local/apache2/conf/server.key
+# Copy SSL certificate and key
+COPY ssl.crt /etc/apache2/ssl/ssl.crt
+COPY ssl.key /etc/apache2/ssl/ssl.key
 
 # Expose port 80 and 443 for SSL
 EXPOSE 80

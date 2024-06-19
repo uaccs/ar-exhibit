@@ -7,3 +7,4 @@ services:
       - '443:443'
     volumes:
       - .:/usr/local/apache2/htdocs
+      - ./ssl:/etc/apache2/ssl/
